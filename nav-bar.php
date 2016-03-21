@@ -1,5 +1,5 @@
 <?php
-
+// load in all files in ./entries into an array
 
 // TODO safegaurd if there is no entries directory
 $entriesDir = './entries';
@@ -14,15 +14,14 @@ foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($entriesDi
 	$entries[] = substr($fname, 10);
 }
 
-$noEntries = count($entries);
 
-global $filename;
-
+// sort the entries
 natsort($entries);
 $entries = array_values($entries);
 
 function get_nav_links() {
-	global $entries, $noEntries, $filename;
+	global $entries, $filename;
+	$noEntries = count($entries);
 
 	$currentEntryNo = array_search( $filename, $entries );
 
@@ -40,15 +39,22 @@ function get_nav_links() {
 		$next = 0;
 	}
 
+	// TODO note that the linking to 'lista' only works due to a part of the rewrite engine
+	// the actual filename is 'list', the 'a' at the end is just a quirk
+	$middle = "<a href=./lista>Lista</a>";
+	// If the current screen is the list; disable the menu bar and make the middle
+	// button 'current entry' instead of list
+	if( $filename == "list" ) {
+		$prevClass = "disabled";
+		$nextClass = "disabled";
+		$middle = "<a href=".$entries[$noEntries - 1].">Nuvarande Inlägg</a>";
+	}
 
-	// <a href="./<filename>.md">Name</a>
+
 	$links = array(
 		"<a class=".$prevClass." href=./".$entries[0].">&#124;&lt;</a>",
 		"<a class=".$prevClass." href=./".$entries[$prev].">Föregående</a>",
-		// get current / get list
-		// TODO note that the linking to 'lista' only works due to a part of the rewrite engine
-		// the actual filename is 'list', the 'a' at the end is just a quirk
-		"<a href=./lista>Lista</a>",
+		$middle,
 		"<a class=".$nextClass." href=./".$entries[$next].">Nästa</a>",
 		"<a class=".$nextClass." href=./".$entries[$noEntries - 1].">&gt;&#124;</a>",
 	);
@@ -62,5 +68,4 @@ function get_nav_links() {
 
 	return $ret;
 }
-
 ?>
