@@ -4,6 +4,7 @@ function getList() {
 	require("./month-to-string.php");
 
 	global $entries;
+	$entries = array_reverse($entries);
 
 	// table start
 	$ret = "<div id='list'><table><tr><th class='tableLeft'>Date</th><th class='tableRight'>Name</th></tr>";
