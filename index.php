@@ -39,15 +39,29 @@
 <div id="content">
 
 <?php
+		$Pd = new Parsedown();
 		if( $filename === "list" ) {
 			echo getList();
+		} else if( 
+			$filename === "about.md"   ||
+			$filename === "contact.md" ||
+			$filename === "legal.md"   ||
+			$filename === "qna.md"
+		) {
+			echo $Pd->text(file_get_contents('./footnote/' . $filename));
 		} else {
-			$Pd = new Parsedown();
 			echo $Pd->text(file_get_contents('./entries/' . $filename));
 		}
 ?>
 
 </div> <!-- content -->
+
+<div id="footnote">
+	<a href=./about.md>About</a>
+	<a href=./contact.md>Contact</a>
+	<a href=./legal.md>Legal</a>
+	<a href=./qna.md>Q&amp;A</a>
+</div> <!-- footnote -->
 
 </div> <!-- all -->
 
