@@ -13,6 +13,8 @@
 		error_reporting(~E_STRICT);
 
 		require('./nav-bar.php');
+		require('./list.php');
+
 		require('./parsedown/Parsedown.php');
 		//require('./parsedown/ParsedownExtra.php');
 
@@ -38,7 +40,7 @@
 
 <?php
 		if( $filename === "list" ) {
-			echo "This be the list";
+			echo getList();
 		} else {
 			$Pd = new Parsedown();
 			echo $Pd->text(file_get_contents('./entries/' . $filename));
