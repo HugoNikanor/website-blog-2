@@ -6,6 +6,7 @@
 		In progress
 	</title>
 	<link rel="stylesheet" href="./blog.css">
+	<link rel="stylesheet" href="./content.css">
 	<?php
 		ini_set('display_startup_errors', 1);
 		ini_set('display_errors', 1);
