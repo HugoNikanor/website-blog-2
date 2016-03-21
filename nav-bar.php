@@ -11,18 +11,14 @@ foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($entriesDi
 	if (substr($fname, strlen($fname) - 1, 1) === '~') continue;
 	if(substr($fname, strlen($entriesDir) + 1, 1) === '.') continue;
 	
-	$entries[] = $fname;
+	$entries[] = substr($fname, 10);
 }
 
 $noEntries = count($entries);
 
 global $filename;
-$currentEntryNo = array_search( './entries/' . $filename, $entries );
-/*
- * Sorts the files
- */
+
 natsort($entries);
-//$entries = array_reverse($entries);
 $entries = array_values($entries);
 
 function getAdjacent( $entryNumber, $change ) {
@@ -38,18 +34,21 @@ function getAdjacent( $entryNumber, $change ) {
 	}
 }
 
+
 function get_nav_links() {
 	global $entries, $noEntries, $filename, $currentEntryNo;
+
+	$currentEntryNo = array_search( './entries/'.$filename, $entries );
 
 	// TODO possibly encode the 'special' characters
 	$links = array(
 		"|<" => $entries[0],
-		"Föregående" => getAdjacent( $currentEntryNo, 1 ),
-		//"Nuvarande" => './entries/' . $filename,
+		"Föregående" => getAdjacent( $currentEntryNo, -1 ),
 		//"Lista" => './list/',
-		"Lista" => './index.php?filename=list',
-		"Nästa" => getAdjacent( $currentEntryNo, -1 ),
-		">|" => $entries[$noEntries - 1]
+		//"Lista" => './index.php?filename=list',
+		"Current" => $entries[$currentEntryNo],
+		"Nästa" => getAdjacent( $currentEntryNo, 1 ),
+		">|" => $entries[$noEntries - 1],
 	);
 
 	$ret = "";
