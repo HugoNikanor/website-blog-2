@@ -21,39 +21,43 @@ global $filename;
 natsort($entries);
 $entries = array_values($entries);
 
-function getAdjacent( $entryNumber, $change ) {
-	global $entries, $noEntries;
-	$entryNumber += $change;
-
-	if( $entryNumber < 0 ) {
-		return $entries[0];
-	} elseif( $entryNumber >= $noEntries ) {
-		return $entries[$noEntries - 1];
-	} else {
-		return $entries[$entryNumber];
-	}
-}
-
-
 function get_nav_links() {
-	global $entries, $noEntries, $filename, $currentEntryNo;
+	global $entries, $noEntries, $filename;
 
-	$currentEntryNo = array_search( './entries/'.$filename, $entries );
+	$currentEntryNo = array_search( $filename, $entries );
 
-	// TODO possibly encode the 'special' characters
+	$next = $currentEntryNo + 1;
+	$prev = $currentEntryNo - 1;
+	$prevClass = "default";
+	$nextClass = "default";
+	// disable the links that needs to be disabled
+	if( $currentEntryNo == 0 ) {
+		$prevClass = "disabled";
+		$prev = 0;
+	}
+	if( $currentEntryNo == $noEntries - 1 ) {
+		$nextClass = "disabled";
+		$next = 0;
+	}
+
+
+	// <a href="./<filename>.md">Name</a>
 	$links = array(
-		"|<" => $entries[0],
-		"Föregående" => getAdjacent( $currentEntryNo, -1 ),
-		//"Lista" => './list/',
-		//"Lista" => './index.php?filename=list',
-		"Current" => $entries[$currentEntryNo],
-		"Nästa" => getAdjacent( $currentEntryNo, 1 ),
-		">|" => $entries[$noEntries - 1],
+		"<a class=".$prevClass." href=./".$entries[0].">&#124;&lt;</a>",
+		"<a class=".$prevClass." href=./".$entries[$prev].">Föregående</a>",
+		// get current / get list
+		// TODO note that the linking to 'lista' only works due to a part of the rewrite engine
+		// the actual filename is 'list', the 'a' at the end is just a quirk
+		"<a href=./lista>Lista</a>",
+		"<a class=".$nextClass." href=./".$entries[$next].">Nästa</a>",
+		"<a class=".$nextClass." href=./".$entries[$noEntries - 1].">&gt;&#124;</a>",
 	);
 
 	$ret = "";
 	foreach( $links as $key => $value ) {
-		$ret .= '<a href="' . $value . '">' . $key . '</a>';
+		// TODO this is dependent on rewrite rules
+		//$ret .= '<a href=./' . $value . '>' . $key . '</a>';
+		$ret .= $value;
 	}
 
 	return $ret;

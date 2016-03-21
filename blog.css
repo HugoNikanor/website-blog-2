@@ -35,6 +35,11 @@ html {
 #nav-pane a:hover {
 	text-decoration: underline;
 }
+#nav-pane .disabled {
+	pointer-events: none;
+	cursor: default;
+	color: grey;
+}
 #content {
 	padding-left: 20px;
 	padding-right: 20px;
