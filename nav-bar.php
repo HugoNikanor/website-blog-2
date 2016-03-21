@@ -42,9 +42,16 @@ function get_nav_links() {
 	// TODO note that the linking to 'lista' only works due to a part of the rewrite engine
 	// the actual filename is 'list', the 'a' at the end is just a quirk
 	$middle = "<a href=./lista>Lista</a>";
-	// If the current screen is the list; disable the menu bar and make the middle
-	// button 'current entry' instead of list
-	if( $filename == "list" ) {
+	// if the site currently is on the list site, or one of the entries of the 
+	// bottom bar then the step buttons sholud be turned off. And the center 
+	// button should be changed into a 'current entry' button
+	if(
+		$filename == "list"       ||
+		$filename == "about.md"   ||
+		$filename == "contact.md" ||
+		$filename == "legal.md"   ||
+		$filename == "qna.md"
+ 	) {
 		$prevClass = "disabled";
 		$nextClass = "disabled";
 		$middle = "<a href=".$entries[$noEntries - 1].">Nuvarande Inlägg</a>";
