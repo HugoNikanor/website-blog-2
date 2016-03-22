@@ -19,10 +19,11 @@
 		require('./parsedown/Parsedown.php');
 		//require('./parsedown/ParsedownExtra.php');
 
+		$noEntries = count($entries);
 		if(isset($_GET['filename'])) {
 			$filename = $_GET['filename'];
 		} else {
-			$filename = substr($entries[$noEntries - 1], 10);
+			$filename = $entries[$noEntries - 1];
 		}
 
 	?>
