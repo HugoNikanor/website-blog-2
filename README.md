@@ -1,4 +1,7 @@
 # website-blog-2
+## Usage
+Good luck with that.
+
 ## Dependencies
 The project have two dependencies, parsedown and my own comment system.
 Both of these are handled as git sub module. To download the project with all
