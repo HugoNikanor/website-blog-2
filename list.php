@@ -27,8 +27,8 @@ function getList() {
 		}
 
 		// table row
-		$ret .= "<tr><td class=tableLeft><a href=".$url.">".$date."</a></td>";
-		$ret .= "<td class=tableRight><a href=".$url.">".$name."</a></td></tr>";
+		$ret .= "<tr><td class=tableLeft><a href=./?filename=".$url.">".$date."</a></td>";
+		$ret .= "<td class=tableRight><a href=./?filename=".$url.">".$name."</a></td></tr>";
 	}
 
 	// table end

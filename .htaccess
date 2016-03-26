@@ -1,4 +1,4 @@
-RewriteEngine On
+RewriteEngine Off
 
 # This is rather stingy with what can be put here
 RewriteBase "/website-blog/"
