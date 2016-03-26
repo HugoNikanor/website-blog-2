@@ -10,8 +10,12 @@ function getList() {
 	$ret = "<div id='list'><table><tr><th class='tableLeft'>Date</th><th class='tableRight'>Name</th></tr>";
 
 	foreach( $entries as $key => $url ) {
+		$name = $url;
+
 		// strips .md extension from file
-		$name = substr($url, 0, -3);
+		if( substr($url, -3) === ".md" ) {
+			$name = substr($url, 0, -3);
+		}
 
 		// parse date if one is present
 		if(is_numeric(substr($url, 0, 6))) {
