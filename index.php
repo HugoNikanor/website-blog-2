@@ -16,6 +16,8 @@
 		require('./nav-bar.php');
 		require('./list.php');
 
+		require('./comment-system/comments-display.php');
+
 		require('./parsedown/Parsedown.php');
 		//require('./parsedown/ParsedownExtra.php');
 
@@ -57,6 +59,8 @@
 ?>
 
 </div> <!-- content -->
+
+<?php displayComments( $filename ) ?>
 
 <div id="footnote">
 	<a href=./about.md>About</a>
