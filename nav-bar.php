@@ -41,7 +41,7 @@ function get_nav_links() {
 
 	// TODO note that the linking to 'lista' only works due to a part of the rewrite engine
 	// the actual filename is 'list', the 'a' at the end is just a quirk
-	$middle = "<a href=./lista>Lista</a>";
+	$middle = "<a href=./?filename=list>Lista</a>";
 	// if the site currently is on the list site, or one of the entries of the 
 	// bottom bar then the step buttons sholud be turned off. And the center 
 	// button should be changed into a 'current entry' button
@@ -54,16 +54,16 @@ function get_nav_links() {
  	) {
 		$prevClass = "disabled";
 		$nextClass = "disabled";
-		$middle = "<a href=".$entries[$noEntries - 1].">Nuvarande Inlägg</a>";
+		$middle = "<a href=./?filename=".$entries[$noEntries - 1].">Nuvarande Inlägg</a>";
 	}
 
 
 	$links = array(
-		"<a class=".$prevClass." href=./".$entries[0].">&#124;&lt;</a>",
-		"<a class=".$prevClass." href=./".$entries[$prev].">Föregående</a>",
+		"<a class=".$prevClass." href=./?filename=".$entries[0].">&#124;&lt;</a>",
+		"<a class=".$prevClass." href=./?filename=".$entries[$prev].">Föregående</a>",
 		$middle,
-		"<a class=".$nextClass." href=./".$entries[$next].">Nästa</a>",
-		"<a class=".$nextClass." href=./".$entries[$noEntries - 1].">&gt;&#124;</a>",
+		"<a class=".$nextClass." href=./?filename=".$entries[$next].">Nästa</a>",
+		"<a class=".$nextClass." href=./?filename=".$entries[$noEntries - 1].">&gt;&#124;</a>",
 	);
 
 	$ret = "";

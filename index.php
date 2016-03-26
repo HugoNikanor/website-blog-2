@@ -76,10 +76,10 @@
 </div> <!-- comments -->
 
 <div id="footnote">
-	<a href=./about.md>About</a>
-	<a href=./contact.md>Contact</a>
-	<a href=./legal.md>Legal</a>
-	<a href=./qna.md>Q&amp;A</a>
+	<a href=./?filename=about.md>About</a>
+	<a href=./?filename=contact.md>Contact</a>
+	<a href=./?filename=legal.md>Legal</a>
+	<a href=./?filename=qna.md>Q&amp;A</a>
 </div> <!-- footnote -->
 
 </div> <!-- all -->
