@@ -1,8 +1,5 @@
 <?php
 function getList() {
-	// TODO there possibly is a better way to do sub-imports
-	require("./month-to-string.php");
-
 	global $entries;
 	$entries = array_reverse($entries);
 
@@ -17,18 +14,12 @@ function getList() {
 			$name = substr($url, 0, -3);
 		}
 
-		// parse date if one is present
-		if(is_numeric(substr($url, 0, 6))) {
-			$date = 
-				substr($url, 6, 2) . " " . 
-				getMonth(substr($url, 4, 2)) . " ". 
-				substr($url, 0, 4);
+		// get date
+		require_once "get-date.php";
+		$date = get_date($url);
 
-			// remove date from filename
-			$name = substr($name, 8);
-		} else {
-			$date = "";
-		}
+		// remove date from filename
+		$name = substr($name, 8);
 
 		// table row
 		$ret .= "<tr><td class=tableLeft><a href=./?filename=".$url.">".$date."</a></td>";

@@ -59,6 +59,10 @@
 </div> <!-- nav-pane -->
 
 <div id="content">
+<div class="date"> Hugo Hornquist <?php 
+require_once "get-date.php";
+echo get_date( $filename );
+?></div>
 
 <?php
 		$Pd = new Parsedown();

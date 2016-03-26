@@ -40,6 +40,11 @@ html {
 	cursor: default;
 	color: grey;
 }
+#content .date {
+	float: right;
+	color: grey;
+	font-size: 80%;
+}
 #comments {
 	max-height: 600px;
 	overflow-y: auto;
