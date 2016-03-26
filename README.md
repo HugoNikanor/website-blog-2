@@ -9,6 +9,9 @@ sub modules just run:
 
 	git clone --recursive https://github.com/hugonikanor/website-blog-2.git
 
+Also, in the ``./website-comment-system`` directory there is a file named 
+``database.ini``, make sure that the file is not accessible over the server.
+
 ## Files
 All blog entries should be put into ``./entries``  
 
