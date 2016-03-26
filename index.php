@@ -28,10 +28,6 @@
 			$filename = $entries[$noEntries - 1];
 		}
 
-		// remove leading points and slashes, for safety
-		$filename = preg_replace( "/^[\.\/]+/", "", $filename );
-
-
 		// List of all the files in the footnote
 		$specialFiles    = parse_ini_file("./special-files.ini", TRUE);
 		$footnoteFiles   = $specialFiles["footnote"]["files"];
@@ -45,6 +41,9 @@
 				$file=$filename;
 			}
 		}
+
+		// remove leading points and slashes, for safety
+		$filename = preg_replace( "/^[\.\/]+/", "", $filename );
 
 	?>
 </head>
