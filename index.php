@@ -57,12 +57,15 @@
 
 </div> <!-- content -->
 
+<div id="comments">
 <?php
 	$footnoteFiles[] = "list";
 	if( !in_array($filename, $footnoteFiles) ) {
+		echo "<hr>";
 		displayComments( $filename );
 	}
 ?>
+</div> <!-- comments -->
 
 <div id="footnote">
 	<a href=./about.md>About</a>

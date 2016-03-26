@@ -40,12 +40,10 @@ html {
 	cursor: default;
 	color: grey;
 }
-#comment {
-	padding: 20px;
-	font-family: arial;
-	word-spacing: 1px;
-	max-height: 1000px;
+#comments {
+	max-height: 600px;
 	overflow-y: auto;
+	overflow-x: hidden;
 }
 #footnote {
 	border-top: 1px solid lightgrey;
