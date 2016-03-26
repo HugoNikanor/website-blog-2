@@ -28,6 +28,8 @@
 			$filename = $entries[$noEntries - 1];
 		}
 
+		// List of all the files in the footnote
+		$footnoteFiles = parse_ini_file("./special-files.ini")["files"];
 	?>
 </head>
 <body>
@@ -46,12 +48,7 @@
 		$Pd = new Parsedown();
 		if( $filename === "list" ) {
 			echo getList();
-		} else if( 
-			$filename === "about.md"   ||
-			$filename === "contact.md" ||
-			$filename === "legal.md"   ||
-			$filename === "qna.md"
-		) {
+		} else if( in_array( $filename, $footnoteFiles )) {
 			echo $Pd->text(file_get_contents('./footnote/' . $filename));
 		} else {
 			echo $Pd->text(file_get_contents('./entries/' . $filename));
@@ -60,7 +57,12 @@
 
 </div> <!-- content -->
 
-<?php displayComments( $filename ) ?>
+<?php
+	$footnoteFiles[] = "list";
+	if( !in_array($filename, $footnoteFiles) ) {
+		displayComments( $filename );
+	}
+?>
 
 <div id="footnote">
 	<a href=./about.md>About</a>
