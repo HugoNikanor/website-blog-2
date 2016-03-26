@@ -3,8 +3,10 @@ function getList() {
 	global $entries;
 	$entries = array_reverse($entries);
 
+	$ret = "";
+
 	// table start
-	$ret = "<div id='list'><table><tr><th class='tableLeft'>Date</th><th class='tableRight'>Name</th></tr>";
+	$ret .= "<div id='entry-list'><table><tr><th class='tableLeft'>Date</th><th class='tableRight'>Name</th></tr>";
 
 	foreach( $entries as $key => $url ) {
 		$name = $url;
