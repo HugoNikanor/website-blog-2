@@ -1,10 +1,4 @@
-RewriteEngine Off
+RewriteEngine On
 
 # This is rather stingy with what can be put here
 RewriteBase "/website-blog/"
-
-# currently a trailing slash wont work
-# This REQUIRES that the filename has a '.md' at the end
-RewriteRule ^([^/]+.md)$ index.php?filename=$1 [NC,L]
-# This might be the dirtiest hack I have yet done...
-RewriteRule ^([^/]+)a$ index.php?filename=$1 [NC,L]
