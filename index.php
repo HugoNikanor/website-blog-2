@@ -16,7 +16,7 @@
 		require('./nav-bar.php');
 		require('./list.php');
 
-		require('./comment-system/comments-display.php');
+		require('./website-comment-system/comments-display.php');
 
 		require('./parsedown/Parsedown.php');
 		//require('./parsedown/ParsedownExtra.php');
