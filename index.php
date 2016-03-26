@@ -29,7 +29,9 @@
 		}
 
 		// List of all the files in the footnote
-		$footnoteFiles = parse_ini_file("./special-files.ini")["files"];
+		$specialFiles = parse_ini_file("./special-files.ini", TRUE);
+		$footnoteFiles = $specialFiles["footnote"]["files"];
+		$otherSpecial = $specialFiles["other"]["files"];
 	?>
 </head>
 <body>
@@ -51,7 +53,14 @@
 		} else if( in_array( $filename, $footnoteFiles )) {
 			echo $Pd->text(file_get_contents('./footnote/' . $filename));
 		} else {
-			echo $Pd->text(file_get_contents('./entries/' . $filename));
+			$file = "./entries/" . $filename;
+			if( file_exists($file) ) {
+				echo $Pd->text(file_get_contents($file));
+			} else {
+				// this removes the comments futher down
+				$filename="entry-not-found.md";
+				echo $Pd->text(file_get_contents("./entry-not-found.md"));
+			}
 		}
 ?>
 
@@ -59,8 +68,7 @@
 
 <div id="comments">
 <?php
-	$footnoteFiles[] = "list";
-	if( !in_array($filename, $footnoteFiles) ) {
+		if( !in_array($filename, array_merge($footnoteFiles,$otherSpecial)) ) {
 		echo "<hr>";
 		displayComments( $filename );
 	}
