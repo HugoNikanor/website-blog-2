@@ -4,10 +4,7 @@ Website built by Hugo Hornquist (me), however, some parts are made by other peop
 
 ###[Parsedown](//parsedown.org)
 Parsedown is used for tracing the markdown files the entries are written in into proper html.  
-It is used under an MIT License readable [here](/LICENSE_PARSEDOWN.txt).
-
-###[Disqus](//disqus.com)
-The comments are powered by Disqus and are used under the following [terms of service](//help.disqus.com/customer/portal/articles/466260-terms-of-service).
+It is used under the MIT License, readable [here](https://raw.githubusercontent.com/erusev/parsedown/master/LICENSE.txt)
 
 ###[imgur](//imgur.com)
 Most images are hosted by imgur. You can read the appropriate terms of service [here](//imgur.com/tos).
@@ -16,7 +13,7 @@ Most images are hosted by imgur. You can read the appropriate terms of service [
 
 ##Disclaimer
 
-Any text on this [website](..) is subject to change at any time. Everything that I write is in some way shape or form connected to me. Please refrain from being majorly offended by my opinions and remember that I have moderation capabilities.
+Any text on this website is subject to change at any time. Everything that I write is in some way shape or form connected to me. Please refrain from being majorly offended by my opinions and remember that I have moderation capabilities.
 
 ---
 
