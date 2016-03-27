@@ -2,9 +2,6 @@
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<title>
-		In progress
-	</title>
 	<link rel="stylesheet" href="./blog.css">
 	<link rel="stylesheet" href="./content.css">
 	<?php
@@ -44,8 +41,15 @@
 
 		// remove leading points and slashes, for safety
 		$filename = preg_replace( "/^[\.\/]+/", "", $filename );
-
 	?>
+<title>
+	Hugos blogg
+	<?php
+			if( isset($file) ) {
+				echo " | ".preg_replace( "/^[# ]*/", "", fgets(fopen($file, 'r')) );
+			}
+	?>
+</title>
 </head>
 <body>
 
