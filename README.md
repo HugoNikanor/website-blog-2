@@ -1,6 +1,7 @@
 # website-blog-2
 ## Usage
 Good luck with that.
+But I kinda have tested that it works with both php5 and php7.0
 
 ## Dependencies
 The project have two dependencies, parsedown and my own comment system.
