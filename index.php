@@ -54,6 +54,7 @@
 <body>
 
 <div id="all">
+<a class="rss-logo" href="./rss.php"><img src="feed-icon-28x28.png" alt="RSS"/><a>
 
 <?php echo file_get_contents("./top-bar.html"); ?>
 

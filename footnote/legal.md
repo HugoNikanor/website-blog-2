@@ -9,6 +9,9 @@ It is used under the MIT License, readable [here](https://raw.githubusercontent.
 ###[imgur](//imgur.com)
 Most images are hosted by imgur. You can read the appropriate terms of service [here](//imgur.com/tos).
 
+### [RSS Logo](//www.mozilla.org/en-US/foundation/feed-icon-guidelines/)
+This is my public statement that I try to follow these guidelines.
+
 ---
 
 ##Disclaimer

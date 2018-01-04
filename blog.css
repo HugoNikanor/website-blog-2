@@ -9,6 +9,11 @@ html {
 	font-size: 15px;
 	margin: auto;
 	overflow: hidden;
+	position: relative;
+}
+#all .rss-logo {
+	position: absolute;
+	right: 5px;
 }
 #top-bar {
 	font-family: monospace;
