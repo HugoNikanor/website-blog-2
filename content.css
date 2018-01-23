@@ -3,6 +3,7 @@
 	padding-right: 20px;
 	font-family: arial;
 	word-spacing: 1px;
+	text-align: justify;
 }
 /* Scary text if the file is missing */
 #content .missingFileHeader {
