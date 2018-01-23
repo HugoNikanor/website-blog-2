@@ -54,6 +54,9 @@ html {
 	max-height: 600px;
 	overflow-y: auto;
 	overflow-x: hidden;
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-bottom: 1em;
 }
 #footnote {
 	border-top: 1px solid lightgrey;
