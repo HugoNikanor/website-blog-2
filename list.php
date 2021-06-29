@@ -21,7 +21,8 @@ function getList() {
 		$date = get_date($url);
 
 		// remove date from filename
-		$name = substr($name, 8);
+		// $name = substr($name, 8);
+		$name = preg_replace( "/^[# ]*/", "", fgets(fopen($file, 'r')));
 
 		// table row
 		$ret .= "<tr><td class=tableLeft><a href=./?filename=".$url.">".$date."</a></td>";

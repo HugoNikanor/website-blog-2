@@ -51,7 +51,8 @@
 	Hugos blogg
 	<?php
 			if( isset($file) ) {
-				echo " | ".preg_replace( "/^[# ]*/", "", fgets(fopen($file, 'r')) );
+				$title = preg_replace( "/^[# ]*/", "", fgets(fopen($file, 'r')));
+				echo " | " . $title;
 			}
 	?>
 </title>
