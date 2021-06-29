@@ -1,11 +1,13 @@
 #About
 
-This is a blog and website written and maintained by Hugo Hornquist (me).
+Website built by Hugo Hornquist (me), however, some parts are made by other people with their permission.
 
-I will primarily post computer related information, and mostly in Swedish.
-Some entries might however be written in English to allow for a temporary larger audience.  
-The about pages are written in English for that reason (Hello! Non Swedes!).
+###[Parsedown](//parsedown.org)
+Parsedown is used for tracing the markdown files the entries are written in into proper html.  
+It is used under the MIT License, readable [here](https://raw.githubusercontent.com/erusev/parsedown/master/LICENSE.txt)
 
----
+###[imgur](//imgur.com)
+Most images are hosted by imgur. You can read the appropriate terms of service [here](//imgur.com/tos).
 
-A (hopefully) up to date version of the source code for the website is available [here](//github.com/HugoNikanor/website-blog-2). However, be aware that any blog entries, the four files in the bottom bar as well as some other parts of the website are not included in that repository.
+### [RSS Logo](//www.mozilla.org/en-US/foundation/feed-icon-guidelines/)
+This is my public statement that I try to follow these guidelines.
