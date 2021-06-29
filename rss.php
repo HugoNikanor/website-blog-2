@@ -3,14 +3,15 @@ ini_set("display_errors", 1);
 header("Content-Type: text/rss+xml");
 
 require ("./load-entries.php");
+require ("./settings.php");
 
 ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-	<title>HugoNikanors Blog</title>
-	<link>http://hugoweb.ga</link>
-	<atom:link href="http://hugoweb.ga/rss.php" rel="self"/>
-	<description>A blog about nothing, but mostly itself</description>
+	<title><?= $blog_title ?></title>
+	<link><?= $urlbase ?></link>
+	<atom:link href="<?= $urlbase ?>/rss.php" rel="self"/>
+	<description><?= $blog_subtitle ?></description>
 	<language>sv</language>
 
 	<?php
@@ -22,8 +23,7 @@ require ("./load-entries.php");
 		}
 		$name = substr($name, 8);
 
-		$servername = $_SERVER["HTTP_HOST"];
-		$fullurl = "http://$servername/?filename=$url";
+		$fullurl = "$urlbase/?filename=$url";
 
 		$year  = substr ($url, 0, 4);
 		$month = substr ($url, 4, 2);

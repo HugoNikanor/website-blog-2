@@ -10,10 +10,14 @@
 		error_reporting(E_ALL);
 		error_reporting(~E_STRICT);
 
+		require('./settings.php');
+
 		require('./nav-bar.php');
 		require('./list.php');
 
-		require('./website-comment-system/comments-display.php');
+		if ($has_comments) {
+			require('./website-comment-system/comments-display.php');
+		}
 
 		require('./parsedown/Parsedown.php');
 		//require('./parsedown/ParsedownExtra.php');
@@ -56,14 +60,14 @@
 <div id="all">
 <a class="rss-logo" href="./rss.php"><img src="feed-icon-28x28.png" alt="RSS"/><a>
 
-<?php echo file_get_contents("./top-bar.html"); ?>
+<?php require("./top-bar.php"); ?>
 
 <div id="nav-pane">
 	<?php echo get_nav_links(); ?>
 </div> <!-- nav-pane -->
 
 <div id="content">
-<div class="date"> Hugo Hornquist <?php 
+<div class="date"> <?= $author ?> <?php
 require_once "get-date.php";
 echo get_date( $filename );
 ?></div>
@@ -81,6 +85,7 @@ echo get_date( $filename );
 
 </div> <!-- content -->
 
+<?php if ($has_comments) { ?>
 <div id="comments">
 <?php
 		if( !in_array($filename, $combinedSpecial) ) {
@@ -89,6 +94,7 @@ echo get_date( $filename );
 	}
 ?>
 </div> <!-- comments -->
+<?php } ?>
 
 <div id="footnote">
 	<a href=./?filename=about.md>About</a>
