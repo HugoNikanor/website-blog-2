@@ -58,7 +58,7 @@
 <body>
 
 <div id="all">
-<a class="rss-logo" href="./rss.php"><img src="feed-icon-28x28.png" alt="RSS"/><a>
+<a class="rss-logo" href="./rss.php"><img src="feed-icon-28x28.png" alt="RSS"/></a>
 
 <?php require("./top-bar.php"); ?>
 
@@ -97,10 +97,10 @@ echo get_date( $filename );
 <?php } ?>
 
 <div id="footnote">
-	<a href=./?filename=about.md>About</a>
-	<a href=./?filename=contact.md>Contact</a>
-	<a href=./?filename=legal.md>Legal</a>
-	<a href=./?filename=qna.md>Q&amp;A</a>
+	<a href="./?filename=about.md">About</a>
+	<a href="./?filename=contact.md">Contact</a>
+	<a href="./?filename=legal.md">Legal</a>
+	<a href="./?filename=qna.md">Q&amp;A</a>
 </div> <!-- footnote -->
 
 </div> <!-- all -->
