@@ -13,10 +13,43 @@ sub modules just run:
 Also, in the ``./website-comment-system`` directory there is a file named 
 ``database.ini``, make sure that the file is not accessible over the server.
 
-## Files
-All blog entries should be put into ``./entries``  
+## Files & Configuration
 
-It's also recomended that entries start with a timestamp formated as following: ``YYYYMMDD``.
+
+All blog entries should be put into `./entries`.
+They all should be named on the form `YYYYMMDDtitle.md`, where `title` can be
+anything. The first line *must* be on the form
+```md
+# Fancy written title
+```
+
+#### special-files.ini
+
+Links which should appear in the footer should be put into the directory
+`footnotes`, and entered into `footnote.files` and `footnote.title` in
+`special-files.ini`.
+
+`other.files` should probably not be touched.
+
+```ini
+[footnote]
+files[] = about.md
+title[] = About
+```
+
+#### settings.php
+
+Remaining settings can be set in `settings.php`.
+
+```php
+<?php
+$author = "Hugo Hornquist";
+$blog_title = "HugoNikanors blogg‽";
+$blog_subtitle = "A blog about nothing, but mostly itself.";
+$http_host = $_SERVER["HTTP_HOST"];
+$urlbase = "http://$http_host/hugo";
+$has_comments = false;
+```
 
 
 ## Why v2?
@@ -30,4 +63,4 @@ The project still is my simple blog engine.
 
 ## In action
 The project's old version can probably be seen in action
-[here](http://hugoweb.ga)
+[here](http://blog.hornquist.se/hugo)
