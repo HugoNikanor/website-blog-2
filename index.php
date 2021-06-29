@@ -32,6 +32,7 @@
 		// List of all the files in the footnote
 		$specialFiles    = parse_ini_file("./special-files.ini", TRUE);
 		$footnoteFiles   = $specialFiles["footnote"]["files"];
+		$footnoteNames   = $specialFiles["footnote"]["title"];
 		$otherSpecial    = $specialFiles["other"]["files"];
 		$combinedSpecial = array_merge( $footnoteFiles, $otherSpecial );
 
@@ -97,10 +98,9 @@ echo get_date( $filename );
 <?php } ?>
 
 <div id="footnote">
-	<a href="./?filename=about.md">About</a>
-	<a href="./?filename=contact.md">Contact</a>
-	<a href="./?filename=legal.md">Legal</a>
-	<a href="./?filename=qna.md">Q&amp;A</a>
+<?php for ($i = 0; $i < count($footnoteFiles); $i++) { ?>
+	<a href="./?filename=<?= $footnoteFiles[$i] ?>"><?= $footnoteNames[$i] ?></a>
+<?php } ?>
 </div> <!-- footnote -->
 
 </div> <!-- all -->
