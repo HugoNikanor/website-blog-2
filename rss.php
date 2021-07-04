@@ -30,7 +30,7 @@ require ("./settings.php");
 		$first_line = fgets($file);
 		$rest_of_file = stream_get_contents($file);
 		$title = trim(preg_replace( "/^[# ]*/", "", $first_line), "\n");
-		$content = $Pd->text($first_line . $rest_of_file);
+		$content = $Pd->text($rest_of_file);
 		# https://stackoverflow.com/a/23066553
 		$content = preg_replace('/[^\PC\s]/u', '�', $content);
 
