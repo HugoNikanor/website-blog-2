@@ -48,7 +48,7 @@
 		$filename = preg_replace( "/^[\.\/]+/", "", $filename );
 	?>
 <title>
-<?= $title ?>
+<?= $blog_title ?>
 	<?php
 			if( isset($file) ) {
 				$title = preg_replace( "/^[# ]*/", "", fgets(fopen($file, 'r')));
