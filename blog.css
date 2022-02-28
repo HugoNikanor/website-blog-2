@@ -50,6 +50,10 @@ html {
 	color: grey;
 	font-size: 80%;
 }
+#content .read-time {
+	color: grey;
+	font-size: 80%;
+}
 #comments {
 	max-height: 600px;
 	overflow-y: auto;

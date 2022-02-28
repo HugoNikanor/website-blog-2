@@ -81,7 +81,11 @@ echo get_date( $filename );
 		} else if( in_array( $filename, $footnoteFiles )) {
 			echo $Pd->text(file_get_contents('./footnote/' . $filename));
 		} else {
-				echo $Pd->text(file_get_contents($file));
+			$contents = file_get_contents($file);
+			$wordcount = str_word_count($contents);
+			/* 250 is about avarage reading speed (in WPM) */
+			echo "<span class='read-time'>Lästid: " . ceil($wordcount / 250) . " minut(er)</span>";
+			echo $Pd->text($contents);
 		}
 ?>
 
