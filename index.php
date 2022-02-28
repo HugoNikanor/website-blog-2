@@ -89,6 +89,13 @@ echo get_date( $filename );
 		}
 ?>
 
+<?php if( !in_array($filename, $combinedSpecial) ) { ?>
+<hr/>
+<a href="./rss.php">
+	<img src="feed-icon-14x14.png" alt="RSS"/>
+	RSS-feed to see more like this.
+</a>
+<?php } ?>
 </div> <!-- content -->
 
 <?php if ($has_comments) { ?>
