@@ -1,0 +1,24 @@
+website-blog-2 (8.2-1) unstable; urgency=low
+
+  * Add read-time indicators to all articles
+  * Add RSS notice at bottom of each page.
+
+ -- Hugo Hörnquist <hugo@lysator.liu.se>  Sat, 19 Mar 2022 00:00:00 +0100
+
+website-blog-2 (8.1-1) unstable; urgency=low
+
+  * Made everything which should be configurable configurable
+
+ -- Hugo Hörnquist <hugo@lysator.liu.se>  Wed, 12 Jan 2022 00:00:00 +0100
+
+website-blog-2 (8.0-1) unstable; urgency=low
+
+  * Add RSS Feed
+
+ -- Hugo Hörnquist <hugo@lysator.liu.se>  Thu, 04 Jan 2018 00:00:00 +0100
+
+website-blog-2 (7.0-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Hugo Hörnquist <hugo@lysator.liu.se>  Sun, 30 Oct 2016 00:00:00 +0200

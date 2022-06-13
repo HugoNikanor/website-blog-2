@@ -1,0 +1,16 @@
+Source: website-blog-2
+Section: net
+Priority: optional
+Maintainer: Hugo Hörnquist <hugo@lysator.liu.se>
+Build-Depends: debhelper-compat (= 12)
+Standards-Version: 4.5.0
+Homepage: https://github.com/HugoNikanor/website-blog-2
+
+Package: website-blog-2
+Architecture: any
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends},
+	php-parsedown
+Recommends: php-fpm
+Description: PHP-based blog engine with markdown support.
+	Which mayhaps shouldn't be trusted
