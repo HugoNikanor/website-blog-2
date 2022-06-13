@@ -1,3 +1,9 @@
+website-blog-2 (8.3-1) unstable; urgency=low
+
+  * Package as debian package!
+
+ -- Hugo Hörnquist <hugo@lysator.liu.se>  Mon, 13 Jun 2022 22:11:46 +0200
+
 website-blog-2 (8.2-1) unstable; urgency=low
 
   * Add read-time indicators to all articles
