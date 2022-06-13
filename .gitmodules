@@ -1,6 +1,6 @@
 [submodule "website-comment-system"]
 	path = website-comment-system
 	url = https://github.com/hugonikanor/website-comment-system.git
-[submodule "parsedown"]
-	path = parsedown
+[submodule "Parsedown"]
+	path = Parsedown
 	url = https://github.com/erusev/parsedown.git

@@ -15,7 +15,7 @@ require ("./settings.php");
 	<language>sv</language>
 
 	<?php
-	require('./parsedown/Parsedown.php');
+	require('Parsedown/Parsedown.php');
 	$Pd = new Parsedown();
 	foreach ($entries as $key => $url) {
 		$name = $url;

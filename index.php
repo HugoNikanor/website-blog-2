@@ -19,8 +19,7 @@
 			require('./website-comment-system/comments-display.php');
 		}
 
-		require('./parsedown/Parsedown.php');
-		//require('./parsedown/ParsedownExtra.php');
+		require('Parsedown/Parsedown.php');
 
 		$noEntries = count($entries);
 		if(isset($_GET['filename'])) {
