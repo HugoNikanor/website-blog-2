@@ -4,6 +4,7 @@
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" href="./blog.css">
 	<link rel="stylesheet" href="./content.css">
+	<link rel="alternate" type="aplication/rss+xml" title="RSS" href=./rss.php" />
 	<?php
 		ini_set('display_startup_errors', 1);
 		ini_set('display_errors', 1);
