@@ -88,6 +88,15 @@ echo get_date( $filename );
 		}
 ?>
 
+<?php if ($has_entry_log && file_exists('entries/.git') && !in_array($filename, $combinedSpecial) ) {  ?>
+<details>
+	<summary>Changelog</summary>
+	<ul>
+		<?php echo `cd entries && git log '--pretty=format:<li>%as %s' $filename` ?>
+	</ul>
+</details>
+<?php } ?>
+
 <?php if( !in_array($filename, $combinedSpecial) ) { ?>
 <hr/>
 <a href="./rss.php">
