@@ -1,11 +1,13 @@
 <?php
 ini_set("display_errors", 1);
-header("Content-Type: text/rss+xml");
+/* text/xml to allow browser to display it (instead of downloading it) */
+header("Content-Type: text/xml");
 
 require ("./load-entries.php");
 require ("./settings.php");
-
 ?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml-stylesheet href="/rss.xsl" type="text/xsl" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
 	<title><?= $blog_title ?></title>
