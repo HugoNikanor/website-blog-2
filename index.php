@@ -21,6 +21,9 @@
 		}
 
 		require('Parsedown/Parsedown.php');
+		if ($use_parsedown_extra) {
+			require('ParsedownExtra/ParsedownExtra.php');
+		}
 
 		$noEntries = count($entries);
 		if(isset($_GET['filename'])) {
@@ -75,7 +78,11 @@ echo get_date( $filename );
 ?></div>
 
 <?php
-		$Pd = new Parsedown();
+		if ($use_parsedown_extra) {
+			$Pd = new ParsedownExtra();
+		} else {
+			$Pd = new Parsedown();
+		}
 		if( $filename === "list" ) {
 			echo getList();
 		} else if( in_array( $filename, $footnoteFiles )) {

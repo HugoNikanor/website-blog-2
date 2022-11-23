@@ -13,6 +13,10 @@ sub modules just run:
 Also, in the ``./website-comment-system`` directory there is a file named 
 ``database.ini``, make sure that the file is not accessible over the server.
 
+### Optional
+[Parsedown Extra](https://github.com/erusev/parsedown-extra) can also be
+enabled. See the configuration.
+
 ## Files & Configuration
 
 

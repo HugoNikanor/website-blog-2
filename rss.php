@@ -18,7 +18,12 @@ require ("./settings.php");
 
 	<?php
 	require('Parsedown/Parsedown.php');
-	$Pd = new Parsedown();
+	if ($use_parsedown_extra) {
+		require('ParsedownExtra/ParsedownExtra.php');
+		$Pd = new ParsedownExtra();
+	} else {
+		$Pd = new Parsedown();
+	}
 	foreach ($entries as $key => $url) {
 		$name = $url;
 

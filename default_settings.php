@@ -15,3 +15,6 @@ $http_host = $_SERVER["HTTP_HOST"];
 $urlbase = "http://$http_host";
 $has_comments = false; // Should a comment section exist?
 $has_entry_log = true; // Should each entries changelog be shown (if available)
+/* Should the parsedown extra library be used in place of regular
+ * parsedown. Requires that it is installed. */
+$use_parsedown_extra = false;
